@@ -7,10 +7,9 @@ This file is mostly undocumented, because:
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stddef.h>
 
 #define customHeapLen 2048 // In bytes
-
-typedef unsigned long size_t; // Apparently, this isn't defined here??
 
 const uint32_t CUSTOMHEAPLEN = customHeapLen; // Our custom heap length.
 
