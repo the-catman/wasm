@@ -188,6 +188,7 @@
     {
         return HEAPF64[ptr >> 4];
     }
+
     /* --- Get Number-like --- */
 
     /* -- Set Array-like --- */
@@ -279,6 +280,7 @@
             ptr += 8;
         }
     }
+
     /* -- Set Array-like --- */
 
     /* --- Set Number-like --- */
@@ -348,6 +350,7 @@
     {
         HEAPF64[ptr >> 4] = value;
     }
+
     /* --- Set Number-like --- */
 
     /** The length of our custom heap. */
@@ -467,6 +470,7 @@
         resetJSOffsets();
         resetWASMOffsets();
     }
+
     /* --- Misc --- */
 
     /* --- Set Custom-Array-like --- */
@@ -568,6 +572,7 @@
             writeoffset += 8;
         }
     }
+
     /* --- Set Custom-Array-like --- */
 
     /* --- Set Custom-Number-like --- */
@@ -651,6 +656,7 @@
         HEAPF32[(custommemptr + writeoffset) >> 4] = value;
         writeoffset += 8;
     }
+
     /* --- Set Custom-Number-like --- */
 
     /* -- Get Custom-Array-like --- */
@@ -762,9 +768,11 @@
         }
         return out;
     }
+
     /* -- Get Custom-Array-like --- */
 
     /* -- Get Custom-Number-like --- */
+
     /**
      * Returns the next value in our custom memory as a character.
      * @returns {string}
@@ -830,5 +838,6 @@
         readoffset += 8;
         return out;
     }
+
     /* -- Get Custom-Number-like --- */
 })();
