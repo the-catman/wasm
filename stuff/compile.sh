@@ -1,0 +1,29 @@
+clang \
+   --target=wasm32 \
+   -O3 \
+   -flto \
+   -nostdlib \
+   -mbulk-memory \
+   -Wl,--no-entry \
+   -fvisibility=hidden \
+   -fdata-sections \
+   -ffunction-sections \
+   -Wl,--lto-O3 \
+   -Wl,-O3 \
+   -Wl,--export-dynamic \
+   -Wall \
+   -o main.wasm \
+   main.c \
+   && \
+wasm2wat \
+   main.wasm \
+   --enable-function-references \
+   --enable-annotations \
+   --inline-exports \
+   --inline-imports \
+   --generate-names \
+   -o main.wat \
+   && \
+wasm2js \
+    main.wasm \
+    -o out.mjs
